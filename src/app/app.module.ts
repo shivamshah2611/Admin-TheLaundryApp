@@ -11,8 +11,8 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { UsersComponent } from './admin/users/users.component';
-import { OrderListComponent } from './admin/orders/order-list/order-list.component';
 import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
+import { PendingOrdersListComponent } from './admin/orders/pending-orders-list/pending-orders-list.component';
 
 
 @NgModule({
@@ -23,8 +23,8 @@ import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.co
     LoginComponent,
     OrdersComponent,
     UsersComponent,
-    OrderListComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    PendingOrdersListComponent
   ],
   imports: [
     BrowserModule,

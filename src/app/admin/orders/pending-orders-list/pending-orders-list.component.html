@@ -5,6 +5,7 @@
       <th class="text-center">Services</th>
       <th class="text-center">Pickup Date</th>
       <th class="text-center">Pickup Address</th>
+      <th class="text-center">Expected Delivery Date</th>
       <th class="text-center">Amount</th>
       <th class="text-center">Pay Status</th>
       <th class="text-center">Order Status</th>
@@ -21,6 +22,9 @@
       </td>
       <td>{{ order.pickupDate }} . {{ order.pickupTimeslot }}</td>
       <td>{{ order.address }} {{ order.pincode }}</td>
+      <td>
+        {{ order.deliveryDate }}
+      </td>
       <td>
         {{ order.amount }}
       </td>
