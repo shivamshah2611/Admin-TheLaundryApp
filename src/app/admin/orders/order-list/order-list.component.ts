@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from './../../../services/orders.service';
+import { Order } from 'src/app/models/order.model';
 
 @Component({
   selector: 'app-order-list',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderListComponent implements OnInit {
 
-  constructor() { }
+  orders: Order[];
+
+  showSpinner: boolean;
+
+  constructor(private orderService: OrdersService) { }
 
   ngOnInit() {
+    this.showSpinner = true;
+    this.orderService.fetchAllOrders().then(orders => {
+      this.orders = orders;
+      this.showSpinner = false;
+      console.log(this.orders);
+    }, err =>{
+      console.log(err);
+    });
+
+
   }
 
 }
