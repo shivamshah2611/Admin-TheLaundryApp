@@ -12,7 +12,15 @@ import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { UsersComponent } from './admin/users/users.component';
 import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
-import { PendingOrdersListComponent } from './admin/orders/pending-orders-list/pending-orders-list.component';
+import { PendingOrdersComponent } from './admin/orders/pending-orders/pending-orders.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompletedOrdersComponent } from './admin/orders/completed-orders/completed-orders.component';
+import { AllOrdersComponent } from './admin/orders/all-orders/all-orders.component';
+import { CancelledOrdersComponent } from './admin/orders/cancelled-orders/cancelled-orders.component';
+
+import { DropdownDirective } from './admin/directives/dropdown.directive';
+import { PickedupOrdersComponent } from './admin/orders/pickedup-orders/pickedup-orders.component';
 
 
 @NgModule({
@@ -24,10 +32,17 @@ import { PendingOrdersListComponent } from './admin/orders/pending-orders-list/p
     OrdersComponent,
     UsersComponent,
     LoadingSpinnerComponent,
-    PendingOrdersListComponent
+    PendingOrdersComponent,
+    CompletedOrdersComponent,
+    AllOrdersComponent,
+    DropdownDirective,
+    CancelledOrdersComponent,
+    PickedupOrdersComponent
   ],
   imports: [
-    BrowserModule,
+
+  BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule

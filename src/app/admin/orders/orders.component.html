@@ -1,9 +1,12 @@
-<div class="container1 card">
-  <div class="card-header">
-    <h2 class="card-title">Orders</h2>
+<div class="container1">
+  <div class="row">
+    <nav class="nav nav-pills">
+      <li routerLinkActive="active"><a routerLink="/admin/orders/pending-orders" class="nav-item">Pending Orders</a></li>
+      <li routerLinkActive="active"><a routerLink="/admin/orders/pickedup-orders" class="nav-item">Pickedup Orders</a></li>
+      <li routerLinkActive="active"><a routerLink="/admin/orders/completed-orders" class="nav-item">Completed Orders</a></li>
+      <li routerLinkActive="active"><a routerLink="/admin/orders/cancelled-orders" class="nav-item">Cancelled Orders</a></li>
+      <li routerLinkActive="active"><a routerLink="/admin/orders/all-orders" class="nav-item">All Orders</a></li>
+    </nav>
   </div>
-  <div class="card-body">
-    <router-outlet></router-outlet>
-  </div>
-
+  <router-outlet></router-outlet>
 </div>

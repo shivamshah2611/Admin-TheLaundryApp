@@ -5,7 +5,11 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './admin/orders/orders.component';
 import { UsersComponent } from './admin/users/users.component';
-import { PendingOrdersListComponent } from './admin/orders/pending-orders-list/pending-orders-list.component';
+import { PendingOrdersComponent } from './admin/orders/pending-orders/pending-orders.component';
+import { CompletedOrdersComponent } from './admin/orders/completed-orders/completed-orders.component';
+import { AllOrdersComponent } from './admin/orders/all-orders/all-orders.component';
+import { CancelledOrdersComponent } from './admin/orders/cancelled-orders/cancelled-orders.component';
+import { PickedupOrdersComponent } from './admin/orders/pickedup-orders/pickedup-orders.component';
 
 const routes: Routes = [
   {
@@ -16,8 +20,12 @@ const routes: Routes = [
         path: 'orders',
         component: OrdersComponent,
         children: [
-          { path: 'pending-order-list', component: PendingOrdersListComponent },
-          { path: '', redirectTo: 'pending-order-list', pathMatch: 'full' }
+          { path: 'pending-orders', component: PendingOrdersComponent },
+          { path: 'completed-orders', component: CompletedOrdersComponent },
+          { path: 'all-orders', component: AllOrdersComponent },
+          { path: 'cancelled-orders', component: CancelledOrdersComponent },
+          { path: 'pickedup-orders', component: PickedupOrdersComponent },
+          { path: '', redirectTo: 'pending-orders', pathMatch: 'full' }
         ]
       },
       { path: 'users', component: UsersComponent },
@@ -32,6 +40,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
 
-  exports: [RouterModule]
+
+exports: [RouterModule]
 })
 export class AppRoutingModule {}

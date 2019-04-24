@@ -3,11 +3,11 @@ import { Order } from 'src/app/models/order.model';
 import { OrdersService } from 'src/app/services/orders.service';
 
 @Component({
-  selector: 'app-pending-orders-list',
-  templateUrl: './pending-orders-list.component.html',
-  styleUrls: ['./pending-orders-list.component.css']
+  selector: 'app-completed-orders',
+  templateUrl: './completed-orders.component.html',
+  styleUrls: ['./completed-orders.component.css']
 })
-export class PendingOrdersListComponent implements OnInit {
+export class CompletedOrdersComponent implements OnInit {
 
   orders: Order[];
 
@@ -16,9 +16,10 @@ export class PendingOrdersListComponent implements OnInit {
   constructor(private orderService: OrdersService) { }
 
   ngOnInit() {
-    this.orderService.getOutstandingOrders().then(orders => {
+    this.orderService.getCompletedOrders().then(orders => {
       this.orders = orders;
       this.showSpinner = false;
     });
   }
+
 }
