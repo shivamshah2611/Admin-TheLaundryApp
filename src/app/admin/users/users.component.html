@@ -1,3 +1,35 @@
-<p>
-  users works!
-</p>
+<div class="container1 card">
+  <div class="card-header">
+    <h2 class="card-title">All Orders</h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">User Name</th>
+          <th class="text-center">Phone Number</th>
+          <th class="text-center">Email</th>
+          <th class="text-center">Member Since</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td class="text-center">
+            {{ user.name }}
+          </td>
+          <td class="text-center">
+            {{ user.phoneNum }}
+          </td>
+          <td class="text-center">
+            {{ user.email }}
+          </td>
+          <td class="text-center">
+            {{ user.joinDate }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+  </div>
+</div>

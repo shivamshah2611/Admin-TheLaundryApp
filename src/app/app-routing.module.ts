@@ -10,6 +10,9 @@ import { CompletedOrdersComponent } from './admin/orders/completed-orders/comple
 import { AllOrdersComponent } from './admin/orders/all-orders/all-orders.component';
 import { CancelledOrdersComponent } from './admin/orders/cancelled-orders/cancelled-orders.component';
 import { PickedupOrdersComponent } from './admin/orders/pickedup-orders/pickedup-orders.component';
+import { AnalyticsComponent } from './admin/analytics/analytics.component';
+import { OrderAnalyticsComponent } from './admin/analytics/order-analytics/order-analytics.component';
+import { UserAnalyticsComponent } from './admin/analytics/user-analytics/user-analytics.component';
 
 const routes: Routes = [
   {
@@ -28,6 +31,15 @@ const routes: Routes = [
           { path: '', redirectTo: 'pending-orders', pathMatch: 'full' }
         ]
       },
+      {
+        path: 'analytics',
+        component: AnalyticsComponent,
+        children: [
+          { path: 'order-analytics', component: OrderAnalyticsComponent },
+          { path: 'user-analytics', component: UserAnalyticsComponent },
+          { path: '', redirectTo: 'order-analytics', pathMatch: 'full' }
+        ]
+      },
       { path: 'users', component: UsersComponent },
       { path: '', redirectTo: 'orders', pathMatch: 'full' }
     ]
@@ -39,8 +51,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
-
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

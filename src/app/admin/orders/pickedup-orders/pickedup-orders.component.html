@@ -1,6 +1,6 @@
 <div class="container1 card">
     <div class="card-header">
-      <h2 class="card-title">Pending Orders</h2>
+      <h2 class="card-title">Picked Up Orders</h2>
     </div>
     <div class="card-body">
       <table class="table table-bordered">
@@ -14,6 +14,7 @@
             <th class="text-center">Amount</th>
             <th class="text-center">Pay Status</th>
             <th class="text-center">Order Status</th>
+            <th class="text-center">Actions</th>
           </tr>
         </thead>
 
@@ -38,6 +39,9 @@
             </td>
             <td>
               {{ order.orderStatus }}
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="orderComplete(order)">Mark Order Complete</button>
             </td>
           </tr>
         </tbody>

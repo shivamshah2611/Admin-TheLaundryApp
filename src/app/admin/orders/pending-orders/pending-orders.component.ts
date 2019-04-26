@@ -13,6 +13,7 @@ export class PendingOrdersComponent implements OnInit, OnDestroy {
   pendingOrders: Order[];
 
   pendSub;
+  pend1Sub;
 
   showSpinner: boolean = true;
 
@@ -21,14 +22,14 @@ export class PendingOrdersComponent implements OnInit, OnDestroy {
   constructor(private orderService: OrdersService) { }
 
   ngOnInit() {
-    this.orderService.getPendingOrders().then(pendOrders => {
-      this.pendingOrders = pendOrders;
-      this.showSpinner = false;
-    });
 
-    this.pendSub = this.orderService._pendingOrders.subscribe(orders => {
+    this.orderService.getPendingOrders();
+
+    this.pendSub = this.orderService._pendingOrders.subscribe((orders) => {
+      this.showSpinner = false;
       this.pendingOrders = orders;
     });
+
   }
 
   ngOnDestroy() {
@@ -45,5 +46,8 @@ export class PendingOrdersComponent implements OnInit, OnDestroy {
 
   orderPickup(order: Order) {
     this.orderService.orderPickedup(order);
+  }
+  orderCancel(order: Order) {
+    this.orderService.orderCancelled(order);
   }
 }

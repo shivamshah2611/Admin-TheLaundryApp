@@ -21,6 +21,9 @@ import { CancelledOrdersComponent } from './admin/orders/cancelled-orders/cancel
 
 import { DropdownDirective } from './admin/directives/dropdown.directive';
 import { PickedupOrdersComponent } from './admin/orders/pickedup-orders/pickedup-orders.component';
+import { AnalyticsComponent } from './admin/analytics/analytics.component';
+import { UserAnalyticsComponent } from './admin/analytics/user-analytics/user-analytics.component';
+import { OrderAnalyticsComponent } from './admin/analytics/order-analytics/order-analytics.component';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { PickedupOrdersComponent } from './admin/orders/pickedup-orders/pickedup
     AllOrdersComponent,
     DropdownDirective,
     CancelledOrdersComponent,
-    PickedupOrdersComponent
+    PickedupOrdersComponent,
+    AnalyticsComponent,
+    UserAnalyticsComponent,
+    OrderAnalyticsComponent
   ],
   imports: [
 
